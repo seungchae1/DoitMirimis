@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoitMirimis">
         <activity
+            android:name=".GetCharacterActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".GetCharacterActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".CharacterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
