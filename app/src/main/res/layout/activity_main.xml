@@ -11,6 +11,6 @@
         android:layout_height="wrap_content"
         android:textSize="50sp"
         android:textColor="@color/black"
-        android:text="아이스크림은 최고임당"/>
+        android:text="아이스크림은 최고인뎅"/>
 
 </LinearLayout>
