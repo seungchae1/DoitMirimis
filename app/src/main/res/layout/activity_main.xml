@@ -13,14 +13,14 @@
         android:layout_height="wrap_content"
         android:textSize="40sp"
         android:textColor="@color/black"
-        android:text="아이스크림은 최고인뎅"/>
+        android:text="아이스크림"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textColor="@color/black"
-        android:text="아이스크림은 최고인뎅"/>
+        android:text="아이스크림"/>
 </LinearLayout>
 
 
