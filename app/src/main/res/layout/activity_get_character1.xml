@@ -9,21 +9,23 @@
     android:padding="20dp"
     android:background="#FFFFEA"
     tools:context=".GetCharacterActivity1">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:layout_marginTop="180dp"
-        android:textSize="35dp"
+        android:layout_marginTop="45dp"
+        android:textStyle="bold"
+        android:textSize="32dp"
         android:text="오늘의 할 일을"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textSize="32dp"
         android:text="모두 완료하였습니다"/>
-    <LinearLayout
+
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -31,9 +33,23 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
             android:src="@drawable/giftbox"/>
+        <ImageView
+            android:layout_width="280dp"
+            android:layout_height="500dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/blaster2"/>
+        <ImageView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/blaster"/>
 
-    </LinearLayout>
+    </FrameLayout>
+
 </LinearLayout>
 
 
