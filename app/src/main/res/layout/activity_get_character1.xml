@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
     android:background="#FFFFEA"
     tools:context=".GetCharacterActivity1">
 
@@ -11,8 +14,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
-        android:textSize="30dp"
-        android:text="오늘의 할 일을 모두 완료하였습니다!"/>
+        android:layout_marginTop="180dp"
+        android:textSize="35dp"
+        android:text="오늘의 할 일을"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:text="모두 완료하였습니다"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/giftbox"/>
+
+    </LinearLayout>
 </LinearLayout>
+
 
