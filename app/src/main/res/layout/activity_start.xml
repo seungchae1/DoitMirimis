@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFEA"
+    android:paddingTop="15dp"
     tools:context=".StartActivity">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/start_title"/>
+        <ImageView
+            android:layout_marginTop="190dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/start_img1"/>
+        <ImageView
+            android:padding="16dp"
+            android:layout_marginTop="370dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/start_img2"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="565dp"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="#FFA5CB"
+            android:text="계획하러 가기 >>"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘의 할 일은?"
+            android:layout_marginTop="530dp"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"/>
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="650dp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image3"/>
+    </FrameLayout>
+</LinearLayout>
