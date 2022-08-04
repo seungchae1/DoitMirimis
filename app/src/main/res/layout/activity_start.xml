@@ -32,6 +32,7 @@
             android:adjustViewBounds="true"
             android:src="@drawable/start_img2"/>
         <Button
+            android:id="@+id/btn_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="565dp"
@@ -45,11 +46,16 @@
             android:layout_marginTop="530dp"
             android:textSize="20sp"
             android:layout_gravity="center_horizontal"/>
-        <ImageView
+        <ImageButton
+            android:id="@+id/btn_character"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="650dp"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/image3"/>
+            android:background="@null"
+            android:src="@drawable/image3"
+            android:padding="0sp"
+            android:scaleType="centerCrop" />
     </FrameLayout>
+
 </LinearLayout>
