@@ -15,7 +15,7 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        Button btnMain = findViewById(R.id.btn_main);
+        ImageButton btnMain = findViewById(R.id.btn_main);
         ImageButton btnCharacter = findViewById(R.id.btn_character);
         btnMain.setOnClickListener(btnListener);
         btnCharacter.setOnClickListener(btnListener);
