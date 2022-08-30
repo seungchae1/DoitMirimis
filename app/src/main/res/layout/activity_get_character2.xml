@@ -19,7 +19,7 @@
         android:textSize="32dp"
         android:text="미리미를"/>
     <TextView
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -35,18 +35,18 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="180dp"
+            android:layout_marginBottom="140dp"
             android:src="@drawable/pinkb"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="220dp"
+            android:layout_marginBottom="170dp"
             android:src="@drawable/charsample"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="348dp"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="23dp"
@@ -55,20 +55,20 @@
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="390dp"
+            android:layout_marginTop="438dp"
             android:src="@drawable/image3"/>
         <ImageView
             android:id="@+id/check_btn"
             android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="360dp"
+            android:layout_marginTop="405dp"
             android:layout_marginLeft="190dp"
             android:src="@drawable/button"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
-            android:layout_marginTop="405dp"
+            android:layout_marginTop="450dp"
             android:layout_marginLeft="210dp"
             android:textColor="@color/white"
             android:textSize="27dp"
