@@ -75,7 +75,7 @@
             android:layout_marginLeft="214dp"
             android:textColor="@color/white"
             android:textSize="27dp"
-            android:text="확인2"/>
+            android:text="확인"/>
     </FrameLayout>
 
 </LinearLayout>
