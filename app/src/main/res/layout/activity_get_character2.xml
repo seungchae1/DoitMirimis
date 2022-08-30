@@ -57,19 +57,22 @@
             android:layout_marginLeft="60dp"
             android:layout_marginTop="438dp"
             android:src="@drawable/image3"/>
-        <ImageView
+        <ImageButton
             android:id="@+id/check_btn"
-            android:layout_width="90dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="405dp"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="435dp"
             android:layout_marginLeft="190dp"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:padding="0sp"
             android:src="@drawable/button"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="false"
             android:layout_marginTop="450dp"
-            android:layout_marginLeft="210dp"
+            android:layout_marginLeft="214dp"
             android:textColor="@color/white"
             android:textSize="27dp"
             android:text="확인"/>

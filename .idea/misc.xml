@@ -3,15 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_character.xml" value="0.358695652173913" />
-        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_get_character1.xml" value="0.358695652173913" />
-        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_get_character2.xml" value="0.358695652173913" />
-        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_start.xml" value="0.25" />
-        <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_get_character1.xml" value="0.25" />
-        <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_start.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_start.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_get_character1.xml" value="0.2708333333333333" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_get_character2.xml" value="0.25" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_start.xml" value="0.2708333333333333" />
       </map>
     </option>
   </component>
