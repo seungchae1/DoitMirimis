@@ -26,7 +26,7 @@ public class StartActivity extends AppCompatActivity {
             Intent intent = null;
             switch (view.getId()){
                 case R.id.btn_main:
-                    intent = new Intent(StartActivity.this, GetCharacterActivity2.class);
+                    intent = new Intent(StartActivity.this, MainActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.btn_character:
