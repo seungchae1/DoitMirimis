@@ -26,11 +26,11 @@ public class GetCharacterActivity2 extends AppCompatActivity {
             switch (view.getId()){
                 case R.id.check_btn:
                     intent = new Intent(GetCharacterActivity2.this, MainActivity.class);
-                    GetCharacterActivity2(intent);
+                    startActivity(intent);
                     break;
                 case R.id.character_btn:
                     intent = new Intent(GetCharacterActivity2.this, MainActivity.class);
-                    GetCharacterActivity2(intent);
+                    startActivity(intent);
                     break;
             }
         }
