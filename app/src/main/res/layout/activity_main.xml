@@ -53,8 +53,7 @@
             android:background="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/rectangle1"
-            />
+            android:src="@drawable/rectangle1"/>
         <EditText
             android:id="@+id/box3"
             android:ems="10"
