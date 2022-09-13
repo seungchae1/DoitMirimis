@@ -51,12 +51,16 @@
             android:textStyle="bold"
             android:textSize="23dp"
             android:text="책 읽는 미리미"/>
-        <ImageView
+        <ImageButton
+            android:id="@+id/character_btn"
             android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="438dp"
-            android:src="@drawable/image3"/>
+            android:layout_height="100dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="428dp"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:src="@drawable/image3"
+            />
         <ImageButton
             android:id="@+id/check_btn"
             android:layout_width="100dp"
