@@ -5,5 +5,102 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFEA"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="30dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:text="2022년 8월 3일"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:text="미리미의 하루"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <EditText
+            android:id="@+id/box1"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="오늘의 할 일은 무엇인가요?"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:padding="30dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle1"/>
+        <EditText
+            android:id="@+id/box2"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="오늘의 할 일은 무엇인가요?"
+            android:textSize="15sp"
+            android:layout_marginTop="125dp"
+            android:padding="30dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle1"/>
+        <EditText
+            android:id="@+id/box3"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="오늘의 할 일은 무엇인가요?"
+            android:textSize="15sp"
+            android:layout_marginTop="230dp"
+            android:padding="30dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle1"/>
+        <EditText
+            android:id="@+id/box4"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="오늘의 할 일은 무엇인가요?"
+            android:textSize="15sp"
+            android:layout_marginTop="335dp"
+            android:padding="30dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle1"/>
+        <EditText
+            android:id="@+id/box5"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="오늘의 할 일은 무엇인가요?"
+            android:textSize="15sp"
+            android:layout_marginTop="440dp"
+            android:padding="30dp"
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rectangle1"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="550dp"
+            android:src="@drawable/image3"/>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="550dp"
+            android:src="@drawable/group3"/>
+    </FrameLayout>
 </LinearLayout>
