@@ -29,7 +29,7 @@ public class GetCharacterActivity2 extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.character_btn:
-                    intent = new Intent(GetCharacterActivity2.this, MainActivity.class);
+                    intent = new Intent(GetCharacterActivity2.this, CharacterActivity.class);
                     startActivity(intent);
                     break;
             }

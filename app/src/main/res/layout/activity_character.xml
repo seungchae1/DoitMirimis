@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFFFEA"
     tools:context=".CharacterActivity">
     <FrameLayout
         android:layout_width="match_parent"
@@ -27,12 +28,13 @@
             android:background="@null"
             android:scaleType="fitCenter"/>
         <GridView
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="70dp"
             android:id="@+id/gridv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:numColumns="3"/>
+            android:numColumns="3"
+            android:paddingBottom="70dp"/>
 
     </FrameLayout>
 </LinearLayout>

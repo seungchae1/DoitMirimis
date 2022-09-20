@@ -14,15 +14,16 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class CharacterActivity extends AppCompatActivity {
     GridView gridv;
-
+    int imgId[]={R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5, R.drawable.img6};
+    String imgName[]={"책읽는 미리미"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character);
-        setTitle("캐릭터 목록");
         gridv = findViewById(R.id.gridv);
         charAdapter adapter= new charAdapter(this);
         gridv.setAdapter(adapter);
@@ -57,7 +58,7 @@ public class CharacterActivity extends AppCompatActivity {
         }
 
         @Override
-        public int getCount() { return 24;}
+        public int getCount() { return 21;}
 
         @Override
         public Object getItem(int i) {
@@ -76,6 +77,20 @@ public class CharacterActivity extends AppCompatActivity {
             imgv.setLayoutParams(params);
             imgv.setPadding(10,20,20,10);
             imgv.setImageResource(R.drawable.char_x);
+            imgv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AlertDialog.Builder dlg = new AlertDialog.Builder(CharacterActivity.this);
+                    View dlgView = View.inflate(CharacterActivity.this, R.layout.click_char,null);
+                    ImageView imgvDlg = dlgView.findViewById(R.id.click_img);
+                    imgvDlg.setImageResource(imgId[0]);
+                    TextView textDlg = dlgView.findViewById(R.id.char_text);
+                    textDlg.setText(imgName[0]);
+                    dlg.setView(dlgView);
+                    dlg.setNegativeButton("close",null);
+                    dlg.show();
+                }
+            });
             return imgv;
         }
     }
