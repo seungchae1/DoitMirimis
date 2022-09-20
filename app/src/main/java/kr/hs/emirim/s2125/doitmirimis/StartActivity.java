@@ -31,6 +31,7 @@ public class StartActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_character:
                     intent = new Intent(StartActivity.this, CharacterActivity.class);
+                    intent.putExtra("back","start");
                     startActivity(intent);
                     break;
             }

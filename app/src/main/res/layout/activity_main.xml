@@ -85,17 +85,18 @@
             android:background="@drawable/rectangle1"
             android:layout_width="match_parent"
             android:layout_height="90dp" />
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="550dp"
-            android:src="@drawable/image3"/>
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/btn_char"
+            android:layout_width="70dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="560dp"
+            android:background="@drawable/image3"/>
+        <ImageButton
+            android:layout_width="52dp"
+            android:layout_height="55dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="290dp"
-            android:layout_marginTop="550dp"
-            android:src="@drawable/group3"/>
+            android:layout_marginLeft="305dp"
+            android:layout_marginTop="557dp"
+            android:background="@drawable/group3"/>
     </FrameLayout>
 </LinearLayout>

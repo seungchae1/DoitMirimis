@@ -44,7 +44,16 @@ public class CharacterActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.btn_back:
-                    intent = new Intent(CharacterActivity.this, StartActivity.class);
+                    intent = getIntent();
+                    String back = intent.getExtras().getString("back");
+                    if(back.equals("start"))
+                    {
+                        intent = new Intent(CharacterActivity.this, StartActivity.class);
+                    }
+                    else if(back.equals("main"))
+                    {
+                        intent = new Intent(CharacterActivity.this, MainActivity.class);
+                    }
                     startActivity(intent);
                     break;
             }
