@@ -38,10 +38,9 @@
             android:textSize="15sp"
             android:layout_marginTop="20dp"
             android:padding="30dp"
-            android:background="#ffffff"
+            android:background="@drawable/rectangle1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/rectangle1"/>
+            android:layout_height="90dp" />
         <EditText
             android:id="@+id/box2"
             android:ems="10"
@@ -50,10 +49,9 @@
             android:textSize="15sp"
             android:layout_marginTop="125dp"
             android:padding="30dp"
-            android:background="#ffffff"
+            android:background="@drawable/rectangle1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/rectangle1"/>
+            android:layout_height="90dp"/>
         <EditText
             android:id="@+id/box3"
             android:ems="10"
@@ -62,10 +60,9 @@
             android:textSize="15sp"
             android:layout_marginTop="230dp"
             android:padding="30dp"
-            android:background="#ffffff"
+            android:background="@drawable/rectangle1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/rectangle1"/>
+            android:layout_height="90dp"/>
         <EditText
             android:id="@+id/box4"
             android:ems="10"
@@ -74,10 +71,9 @@
             android:textSize="15sp"
             android:layout_marginTop="335dp"
             android:padding="30dp"
-            android:background="#ffffff"
+            android:background="@drawable/rectangle1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/rectangle1"/>
+            android:layout_height="90dp" />
         <EditText
             android:id="@+id/box5"
             android:ems="10"
@@ -86,10 +82,9 @@
             android:textSize="15sp"
             android:layout_marginTop="440dp"
             android:padding="30dp"
-            android:background="#ffffff"
+            android:background="@drawable/rectangle1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/rectangle1"/>
+            android:layout_height="90dp" />
         <ImageView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
