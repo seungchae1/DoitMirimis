@@ -95,8 +95,8 @@
             android:layout_width="52dp"
             android:layout_height="55dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginLeft="305dp"
-            android:layout_marginTop="557dp"
+            android:layout_marginLeft="295dp"
+            android:layout_marginTop="555dp"
             android:background="@drawable/group3"/>
     </FrameLayout>
 </LinearLayout>
