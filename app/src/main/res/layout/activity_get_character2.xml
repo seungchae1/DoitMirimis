@@ -38,11 +38,13 @@
             android:layout_marginBottom="140dp"
             android:src="@drawable/pinkb"/>
         <ImageView
+            android:id="@+id/get_imgv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="170dp"
             android:src="@drawable/charsample"/>
         <TextView
+            android:id="@+id/get_textv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

@@ -18,11 +18,18 @@ import android.widget.TextView;
 
 public class CharacterActivity extends AppCompatActivity {
     GridView gridv;
-    int imgId[]={R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5, R.drawable.img6};
-    String imgName[]={"책읽는 미리미"};
+    public static boolean get_Char[]= new boolean[21];
+    public static int imgId[]={R.drawable.img, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5, R.drawable.img6};
+    public static String imgName[]={"책읽는 미리미", "과제하는 미리미","고양이 탈을 쓴 미리미", "우울한 미리미",
+            "밥먹는 미리미", "청소하는 미리미"};
+    int back = R.drawable.char_o;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*for(int i=0; i<get_Char.length; i++)
+        {
+            get_Char[i]=false;
+        }*/
         setContentView(R.layout.activity_character);
         gridv = findViewById(R.id.gridv);
         charAdapter adapter= new charAdapter(this);
@@ -85,21 +92,25 @@ public class CharacterActivity extends AppCompatActivity {
             ViewGroup.LayoutParams params = new GridView.LayoutParams(330,330);
             imgv.setLayoutParams(params);
             imgv.setPadding(10,20,20,10);
-            imgv.setImageResource(R.drawable.char_x);
-            imgv.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    AlertDialog.Builder dlg = new AlertDialog.Builder(CharacterActivity.this);
-                    View dlgView = View.inflate(CharacterActivity.this, R.layout.click_char,null);
-                    ImageView imgvDlg = dlgView.findViewById(R.id.click_img);
-                    imgvDlg.setImageResource(imgId[0]);
-                    TextView textDlg = dlgView.findViewById(R.id.char_text);
-                    textDlg.setText(imgName[0]);
-                    dlg.setView(dlgView);
-                    dlg.setNegativeButton("close",null);
-                    dlg.show();
-                }
-            });
+            if(get_Char[i])
+            {
+                imgv.setImageResource(imgId[i]);
+                imgv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AlertDialog.Builder dlg = new AlertDialog.Builder(CharacterActivity.this);
+                        View dlgView = View.inflate(CharacterActivity.this, R.layout.click_char,null);
+                        ImageView imgvDlg = dlgView.findViewById(R.id.click_img);
+                        imgvDlg.setImageResource(imgId[0]);
+                        TextView textDlg = dlgView.findViewById(R.id.char_text);
+                        textDlg.setText(imgName[0]);
+                        dlg.setView(dlgView);
+                        dlg.setNegativeButton("close",null);
+                        dlg.show();
+                    }
+                });
+            }
+            else imgv.setImageResource(R.drawable.char_x);
             return imgv;
         }
     }

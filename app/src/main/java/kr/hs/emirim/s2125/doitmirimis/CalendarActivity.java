@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-class activity_calendar extends AppCompatActivity {
+public class CalendarActivity extends AppCompatActivity {
 
     Calendar myCalendar = Calendar.getInstance();
 
@@ -34,7 +34,7 @@ class activity_calendar extends AppCompatActivity {
         et_Date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(activity_calendar.this, myDatePicker, myCalendar.get(Calendar.YEAR),
+                new DatePickerDialog(CalendarActivity.this, myDatePicker, myCalendar.get(Calendar.YEAR),
                         myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
@@ -47,7 +47,7 @@ class activity_calendar extends AppCompatActivity {
 
             int minute = mcurrentTime.get(Calendar.MINUTE);
             TimePickerDialog mTimePicker;
-            mTimePicker = new TimePickerDialog(activity_calendar.this, new TimePickerDialog.OnTimeSetListener() {
+            mTimePicker = new TimePickerDialog(CalendarActivity.this, new TimePickerDialog.OnTimeSetListener() {
                 @Override
                 public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                     String state = "AM";

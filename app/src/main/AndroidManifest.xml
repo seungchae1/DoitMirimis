@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoitMirimis">
         <activity
-            android:name=".Calendar"
+            android:name=".CalendarActivity"
             android:exported="false" />
         <activity
             android:name=".GetCharacterActivity2"

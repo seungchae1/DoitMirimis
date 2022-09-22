@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class GetCharacterActivity2 extends AppCompatActivity {
 
@@ -17,6 +19,14 @@ public class GetCharacterActivity2 extends AppCompatActivity {
         ImageButton character_btn = findViewById(R.id.character_btn);
         check_btn.setOnClickListener(btnListener);
         character_btn.setOnClickListener(btnListener);
+
+        int giveChar = (int)(Math.random()*6)+1;
+        CharacterActivity.get_Char[giveChar]=true;
+
+        ImageView imgv = findViewById(R.id.get_imgv);
+        imgv.setImageResource(CharacterActivity.imgId[giveChar]);
+        TextView textv = findViewById(R.id.get_textv);
+        textv.setText(CharacterActivity.imgName[giveChar]);
     }
 
     View.OnClickListener btnListener = new View.OnClickListener() {

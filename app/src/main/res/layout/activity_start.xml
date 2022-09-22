@@ -32,7 +32,7 @@
             android:adjustViewBounds="true"
             android:src="@drawable/start_img2"/>
         <ImageButton
-            android:id="@+id/btn_main"
+            android:id="@+id/btn_calendar"
             android:layout_width="180dp"
             android:layout_height="60dp"
             android:layout_marginTop="565dp"
