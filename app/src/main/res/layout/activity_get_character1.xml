@@ -31,24 +31,29 @@
         android:padding="10dp"
         android:orientation="horizontal">
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/box_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/giftbox"/>
+            android:src="@drawable/giftbox"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:padding="0sp" />
         <ImageView
-            android:layout_width="280dp"
-            android:layout_height="500dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="90dp"
             android:src="@drawable/blaster2"/>
         <ImageView
-            android:layout_width="280dp"
-            android:layout_height="500dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
-            android:layout_marginTop="80dp"
-            android:layout_marginLeft="70dp"
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="80dp"
             android:src="@drawable/blaster"/>
 
     </FrameLayout>
