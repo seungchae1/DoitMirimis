@@ -40,5 +40,30 @@
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/Date"/>
 
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/check_btn"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="640dp"
+            android:layout_marginLeft="290dp"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:padding="0sp"
+            android:src="@drawable/button"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:layout_marginTop="655dp"
+            android:layout_marginLeft="315dp"
+            android:textColor="@color/white"
+            android:textSize="27dp"
+            android:text="확인"/>
+    </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
