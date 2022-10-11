@@ -3,14 +3,16 @@ package kr.hs.emirim.s2125.doitmirimis;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class GetCharacterActivity2 extends AppCompatActivity {
-
+    public static int giveChar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +22,15 @@ public class GetCharacterActivity2 extends AppCompatActivity {
         check_btn.setOnClickListener(btnListener);
         character_btn.setOnClickListener(btnListener);
 
-        int giveChar = (int)(Math.random()*6)+1;
-        CharacterActivity.get_Char[giveChar]=true;
+        giveChar = (int)(Math.random()*21)+1;
+
+
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
+        SharedPreferences.Editor editor= sharedPreferences.edit(); //sharedPreferences를 제어할 editor를 선언
+        editor.putBoolean(Integer.toString(giveChar),true);
+        editor.commit();
+
+
 
         ImageView imgv = findViewById(R.id.get_imgv);
         imgv.setImageResource(CharacterActivity.imgId[giveChar]);
@@ -40,6 +49,7 @@ public class GetCharacterActivity2 extends AppCompatActivity {
                     break;
                 case R.id.character_btn:
                     intent = new Intent(GetCharacterActivity2.this, CharacterActivity.class);
+                    intent.putExtra("back","main");
                     startActivity(intent);
                     break;
             }
