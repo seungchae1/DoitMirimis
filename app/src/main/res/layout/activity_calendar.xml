@@ -62,7 +62,7 @@
             android:layout_marginLeft="315dp"
             android:textColor="@color/white"
             android:textSize="27dp"
-            android:text="확인"/>
+            android:text="체크"/>
     </FrameLayout>
 
 
