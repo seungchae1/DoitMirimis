@@ -18,6 +18,7 @@
         <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_get_character1.xml" value="0.25" />
         <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_start.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_calendar.xml" value="0.2033514492753623" />
         <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_character.xml" value="0.26313405797101447" />
         <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_get_character1.xml" value="0.33" />
         <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_get_character2.xml" value="0.33" />
@@ -34,7 +35,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.33" />
+        <option name="scale" value="0.2033514492753623" />
       </ProjectState>
     </option>
   </component>

@@ -15,8 +15,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
-        android:text="Date"
-        android:textSize="25sp"
+        android:text="날짜를 선택하세요"
+        android:textSize="30sp"
         android:clickable="true"
         android:editable="false"
         android:focusable="false"
@@ -31,14 +31,39 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
-        android:text="Time"
-        android:textSize="25sp"
+        android:text="시간을 선택하세요"
+        android:textSize="30sp"
         android:clickable="true"
         android:editable="false"
         android:focusable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/Date"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/check_btn"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="640dp"
+            android:layout_marginLeft="290dp"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:padding="0sp"
+            android:src="@drawable/button"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:layout_marginTop="655dp"
+            android:layout_marginLeft="315dp"
+            android:textColor="@color/white"
+            android:textSize="27dp"
+            android:text="체크"/>
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
