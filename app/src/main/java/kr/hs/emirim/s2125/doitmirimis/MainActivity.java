@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             Intent intent = null;
-            switch (view.getId()){/*
+            switch (view.getId()){
                 case R.id.btn_calendar:
-                    intent = new Intent(MainActivity.this, Calendar.class);
+                    intent = new Intent(MainActivity.this, CalendarActivity.class);
                     startActivity(intent);
-                    break;*/
+                    break;
                 case R.id.btn_char:
                     intent = new Intent(MainActivity.this, CharacterActivity.class);
                     intent.putExtra("back","main");

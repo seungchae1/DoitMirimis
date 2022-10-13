@@ -29,9 +29,6 @@ public class CharacterActivity extends AppCompatActivity {
     public static String imgName[]={"책읽는 미리미", "과제하는 미리미","고양이 탈을 쓴 미리미", "우울한 미리미",
             "밥먹는 미리미", "청소하는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미",
             "책읽는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미", "책읽는 미리미"};
-    int back = R.drawable.char_o;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
