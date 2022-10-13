@@ -1,77 +1,177 @@
 package kr.hs.emirim.s2125.doitmirimis;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.DatePicker;
+import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
-import android.widget.TimePicker;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
+import android.widget.TextView;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 public class CalendarActivity extends AppCompatActivity {
 
-    Calendar myCalendar = Calendar.getInstance();
+    public String readDay = null;
+    public String str = null;
+    public CalendarView calendarView;
+    public Button cha_Btn, del_Btn, save_Btn;
+    public TextView diaryTextView, textView2, textView3;
+    public EditText contextEditText;
 
-    DatePickerDialog.OnDateSetListener myDatePicker = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            myCalendar.set(Calendar.YEAR, year);
-            myCalendar.set(Calendar.MONTH, month);
-            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            updateLabel();
-        }
-    };
-//
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+        calendarView = findViewById(R.id.calendarView);
+        diaryTextView = findViewById(R.id.diaryTextView);
+        save_Btn = findViewById(R.id.save_Btn);
+        del_Btn = findViewById(R.id.del_Btn);
+        cha_Btn = findViewById(R.id.cha_Btn);
+        textView2 = findViewById(R.id.textView2);
+        textView3 = findViewById(R.id.textView3);
+        contextEditText = findViewById(R.id.contextEditText);
 
-        EditText et_Date = (EditText) findViewById(R.id.Date);
-        et_Date.setOnClickListener(new View.OnClickListener() {
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener()
+        {
             @Override
-            public void onClick(View v) {
-                new DatePickerDialog(CalendarActivity.this, myDatePicker, myCalendar.get(Calendar.YEAR),
-                        myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth)
+            {
+                diaryTextView.setVisibility(View.VISIBLE);
+                save_Btn.setVisibility(View.VISIBLE);
+                contextEditText.setVisibility(View.VISIBLE);
+                textView2.setVisibility(View.INVISIBLE);
+                cha_Btn.setVisibility(View.INVISIBLE);
+                del_Btn.setVisibility(View.INVISIBLE);
+                diaryTextView.setText(String.format("%d / %d / %d", year, month + 1, dayOfMonth));
+                contextEditText.setText("");
+                checkDay(year, month, dayOfMonth);
             }
         });
-    final EditText et_time = (EditText)  findViewById(R.id.Time);
-    et_time.setOnClickListener(new View.OnClickListener(){
-        @Override
-        public void onClick(View v) {
-            Calendar mcurrentTime = Calendar.getInstance();
-            int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY) + 9; // 9를 더하여 한국 시간으로 변경함
+        save_Btn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                saveDiary(readDay);
+                str = contextEditText.getText().toString();
+                textView2.setText(str);
+                save_Btn.setVisibility(View.INVISIBLE);
+                cha_Btn.setVisibility(View.VISIBLE);
+                del_Btn.setVisibility(View.VISIBLE);
+                contextEditText.setVisibility(View.INVISIBLE);
+                textView2.setVisibility(View.VISIBLE);
 
-            int minute = mcurrentTime.get(Calendar.MINUTE);
-            TimePickerDialog mTimePicker;
-            mTimePicker = new TimePickerDialog(CalendarActivity.this, new TimePickerDialog.OnTimeSetListener() {
-                @Override
-                public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                    String state = "AM";
-                    // 선택할 시간이 12시를 넘을 경우 "PM"으로 변경 및 -12시간하여 출력
-                    if (selectedHour > 12) {
-                        selectedHour -= 12;
-                        state = "PM";
-                    }
-                    et_time.setText(state + " " + selectedHour + "시 " + selectedMinute + "분");
-                }
-            }, hour, minute, false); // true의 경우 24시간 형식의 TimePicker 출현
-            mTimePicker.setTitle("Select Time");
-            mTimePicker.show();
-        }
-    });
+            }
+        });
     }
-    private void updateLabel(){
-        String myFormat = "yyyy/MM/dd";
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.KOREA);
 
-        EditText et_date = (EditText) findViewById(R.id.Date);
-        et_date.setText(sdf.format(myCalendar.getTime()));
+    public void checkDay(int cYear, int cMonth, int cDay)
+    {
+        readDay = "" + cYear + "-" + (cMonth + 1) + "" + "-" + cDay + ".txt";
+        FileInputStream fis;
+
+        try
+        {
+            fis = openFileInput(readDay);
+
+            byte[] fileData = new byte[fis.available()];
+            fis.read(fileData);
+            fis.close();
+
+            str = new String(fileData);
+
+            contextEditText.setVisibility(View.INVISIBLE);
+            textView2.setVisibility(View.VISIBLE);
+            textView2.setText(str);
+
+            save_Btn.setVisibility(View.INVISIBLE);
+            cha_Btn.setVisibility(View.VISIBLE);
+            del_Btn.setVisibility(View.VISIBLE);
+
+            cha_Btn.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    contextEditText.setVisibility(View.VISIBLE);
+                    textView2.setVisibility(View.INVISIBLE);
+                    contextEditText.setText(str);
+
+                    save_Btn.setVisibility(View.VISIBLE);
+                    cha_Btn.setVisibility(View.INVISIBLE);
+                    del_Btn.setVisibility(View.INVISIBLE);
+                    textView2.setText(contextEditText.getText());
+                }
+
+            });
+            del_Btn.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View view)
+                {
+                    textView2.setVisibility(View.INVISIBLE);
+                    contextEditText.setText("");
+                    contextEditText.setVisibility(View.VISIBLE);
+                    save_Btn.setVisibility(View.VISIBLE);
+                    cha_Btn.setVisibility(View.INVISIBLE);
+                    del_Btn.setVisibility(View.INVISIBLE);
+                    removeDiary(readDay);
+                }
+            });
+            if (textView2.getText() == null)
+            {
+                textView2.setVisibility(View.INVISIBLE);
+                diaryTextView.setVisibility(View.VISIBLE);
+                save_Btn.setVisibility(View.VISIBLE);
+                cha_Btn.setVisibility(View.INVISIBLE);
+                del_Btn.setVisibility(View.INVISIBLE);
+                contextEditText.setVisibility(View.VISIBLE);
+            }
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @SuppressLint("WrongConstant")
+    public void removeDiary(String readDay)
+    {
+        FileOutputStream fos;
+        try
+        {
+            fos = openFileOutput(readDay, MODE_NO_LOCALIZED_COLLATORS);
+            String content = "";
+            fos.write((content).getBytes());
+            fos.close();
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @SuppressLint("WrongConstant")
+    public void saveDiary(String readDay)
+    {
+        FileOutputStream fos;
+        try
+        {
+            fos = openFileOutput(readDay, MODE_NO_LOCALIZED_COLLATORS);
+            String content = contextEditText.getText().toString();
+            fos.write((content).getBytes());
+            fos.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }
-
     
