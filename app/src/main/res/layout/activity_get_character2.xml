@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="170dp"
-            android:src="@drawable/charsample"/>
+            android:src="@drawable/img1_2"/>
         <TextView
             android:id="@+id/get_textv"
             android:layout_width="wrap_content"
@@ -51,8 +51,7 @@
             android:layout_marginTop="348dp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:textSize="23dp"
-            android:text="책 읽는 미리미"/>
+            android:textSize="23dp"/>
         <ImageButton
             android:id="@+id/character_btn"
             android:layout_width="100dp"
