@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageButton btnCharacter = findViewById(R.id.btn_char);
+        ImageButton btnCalendar = findViewById(R.id.btn_calendar);
         btnCharacter.setOnClickListener(btnListener);
+        btnCalendar.setOnClickListener(btnListener);
     }
 
     View.OnClickListener btnListener = new View.OnClickListener() {
