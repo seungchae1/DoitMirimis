@@ -108,7 +108,6 @@ public class CalendarActivity extends AppCompatActivity {
                 }
 
             });
-            //
             del_Btn.setOnClickListener(new View.OnClickListener()
             {
                 @Override
