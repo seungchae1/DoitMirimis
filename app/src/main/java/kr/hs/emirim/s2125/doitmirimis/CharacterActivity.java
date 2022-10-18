@@ -7,23 +7,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class CharacterActivity extends AppCompatActivity {
     GridView gridv;
     public static boolean get_Char[]= new boolean[21];
-    public static int imgId[]={R.drawable.img, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5, R.drawable.img6, R.drawable.img7,R.drawable.img8, R.drawable.img9,
+    public static int imgId[]={R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5, R.drawable.img6, R.drawable.img7,R.drawable.img8, R.drawable.img9,
             R.drawable.img6,R.drawable.img6,R.drawable.img6,R.drawable.img6,R.drawable.img6,R.drawable.img6,R.drawable.img6,R.drawable.img6,R.drawable.img6,R.drawable.img6, R.drawable.img6,
             R.drawable.img6};
     public static String imgName[]={"책읽는 미리미", "과제하는 미리미","고양이 탈을 쓴 미리미", "우울한 미리미",
@@ -110,9 +105,9 @@ public class CharacterActivity extends AppCompatActivity {
                         AlertDialog.Builder dlg = new AlertDialog.Builder(CharacterActivity.this);
                         View dlgView = View.inflate(CharacterActivity.this, R.layout.click_char,null);
                         ImageView imgvDlg = dlgView.findViewById(R.id.click_img);
-                        imgvDlg.setImageResource(imgId[0]);
+                        imgvDlg.setImageResource(imgId[i]);
                         TextView textDlg = dlgView.findViewById(R.id.char_text);
-                        textDlg.setText(imgName[0]);
+                        textDlg.setText(imgName[i]);
                         dlg.setView(dlgView);
                         dlg.setNegativeButton("close",null);
                         dlg.show();

@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 public class GetCharacterActivity2 extends AppCompatActivity {
     public static int giveChar;
+    int imgId[]={R.drawable.img1_2,R.drawable.img2_2,R.drawable.img3_2,R.drawable.img4_2,R.drawable.img5_2,R.drawable.img6_2,R.drawable.img7_2,R.drawable.img8_2,
+            R.drawable.img9_2,R.drawable.img1_2,R.drawable.img1_2,R.drawable.img1_2,R.drawable.img1_2,R.drawable.img1_2,R.drawable.img1_2,R.drawable.img1_2,R.drawable.img1_2,
+            R.drawable.img1_2,R.drawable.img1_2,R.drawable.img1_2,R.drawable.img1_2};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +33,7 @@ public class GetCharacterActivity2 extends AppCompatActivity {
         editor.commit();
 
         ImageView imgv = findViewById(R.id.get_imgv);
-        imgv.setImageResource(CharacterActivity.imgId[giveChar]);
+        imgv.setImageResource(imgId[giveChar]);
         TextView textv = findViewById(R.id.get_textv);
         textv.setText(CharacterActivity.imgName[giveChar]);
     }
