@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         btnCharacter.setOnClickListener(btnListener);
         btnCalendar.setOnClickListener(btnListener);
     }
-
+    //
     View.OnClickListener btnListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
             }
+// https://comain.tistory.com/m/322
         }
     };
+
+
 }
