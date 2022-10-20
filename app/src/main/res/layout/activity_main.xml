@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-
+        android:layout_marginRight="20dp"
+        >
         <ImageButton
             android:id="@+id/btn_calendar"
             android:layout_width="78dp"
@@ -43,16 +43,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginRight="20dp"
+        >
+        <TextView
+            android:id="@+id/textview_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="연습"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            />
         <ImageButton
-            android:id="@+id/box1"
+            android:id="@+id/button"
             android:ems="10"
             android:gravity="top"
-            android:hint="오늘의 할 일은 무엇인가요?"
             android:textSize="15sp"
             android:layout_marginTop="20dp"
             android:padding="30dp"
-
             android:background="@drawable/rectangle1"
             android:layout_width="match_parent"
             android:layout_height="90dp" />
