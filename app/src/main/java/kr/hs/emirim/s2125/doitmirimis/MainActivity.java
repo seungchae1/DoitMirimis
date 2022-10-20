@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
             }
-// https://comain.tistory.com/m/322
         }
     };
 
