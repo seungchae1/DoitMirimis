@@ -3,19 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.163" />
+        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/drawable/ic_launcher_background.xml" value="0.163" />
+        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_calendar.xml" value="0.358695652173913" />
         <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_character.xml" value="0.358695652173913" />
         <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_get_character1.xml" value="0.358695652173913" />
         <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_get_character2.xml" value="0.358695652173913" />
-        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_start.xml" value="0.3451086956521739" />
-        <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/drawable/dialog_default_txtview_design.xml" value="0.13" />
-        <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_calendar.xml" value="0.33" />
-        <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_dialog.xml" value="0.1" />
+        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/2101sinheung/DoitMirimis/app/src/main/res/layout/edittext_rounded_corner.xml" value="0.1" />
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_calendar.xml" value="0.33" />
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_character.xml" value="0.33" />
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_get_character2.xml" value="0.33" />
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_start.xml" value="0.25" />
+        <entry key="..\:/Users/Mirim/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/click_char.xml" value="0.20923913043478262" />
         <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_get_character1.xml" value="0.25" />
-        <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_get_character2.xml" value="0.25" />
-        <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Mirim/Documents/DoitMirimis/app/src/main/res/layout/activity_start.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_calendar.xml" value="0.2033514492753623" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_character.xml" value="0.26313405797101447" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_get_character1.xml" value="0.33" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_get_character2.xml" value="0.33" />
+        <entry key="..\:/Users/jinxi/AndroidStudioProjects/DoitMirimis/app/src/main/res/layout/activity_start.xml" value="0.33" />
       </map>
     </option>
   </component>
