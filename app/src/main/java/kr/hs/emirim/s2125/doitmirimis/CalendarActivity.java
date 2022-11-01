@@ -3,11 +3,13 @@ package kr.hs.emirim.s2125.doitmirimis;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,6 +22,7 @@ public class CalendarActivity extends AppCompatActivity {
     public Button cha_Btn, del_Btn, save_Btn;
     public TextView diaryTextView, textView2, textView3;
     public EditText contextEditText;
+    private Object ImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,6 +30,8 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
         calendarView = findViewById(R.id.calendarView);
+        ImageButton chk_btn = findViewById(R.id.chk_Btn);
+        chk_btn.setOnClickListener(btnListener);
 /*        diaryTextView = findViewById(R.id.diaryTextView);
         save_Btn = findViewById(R.id.save_Btn);
         del_Btn = findViewById(R.id.del_Btn);
@@ -67,6 +72,18 @@ public class CalendarActivity extends AppCompatActivity {
             }
         });*/
     }
+    View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = null;
+            switch (view.getId()){
+                case R.id.chk_Btn:
+                    intent = new Intent(CalendarActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
 
     /*public void checkDay(int cYear, int cMonth, int cDay)
     {
@@ -167,4 +184,5 @@ public class CalendarActivity extends AppCompatActivity {
         }
     }*/
 }
+
     
