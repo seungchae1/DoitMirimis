@@ -44,6 +44,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <CheckBox
+                android:id="@+id/check1"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:paddingLeft="10dp"
+                android:text="오늘의 할 일은 무엇인가요?"
+                android:textSize="15sp"
+                android:background="@drawable/rectangle1" />
             <EditText
                 android:id="@+id/box1"
                 android:ems="10"
