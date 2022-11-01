@@ -15,7 +15,7 @@ public class GetCharacterActivity2 extends AppCompatActivity {
     public static int giveChar;
     int imgId[]={R.drawable.img1_2,R.drawable.img2_2,R.drawable.img3_2,R.drawable.img4_2,R.drawable.img5_2,R.drawable.img6_2,R.drawable.img7_2,R.drawable.img8_2,
             R.drawable.img9_2,R.drawable.img10_2,R.drawable.img11_2,R.drawable.img12_2,R.drawable.img13_2,R.drawable.img14_2,R.drawable.img15_2,R.drawable.img16_2,
-            R.drawable.img17_2, R.drawable.img18_2,R.drawable.img19_2,R.drawable.img20_2,R.drawable.img1_2};
+            R.drawable.img17_2, R.drawable.img18_2,R.drawable.img19_2,R.drawable.img20_2,R.drawable.img21_2};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
