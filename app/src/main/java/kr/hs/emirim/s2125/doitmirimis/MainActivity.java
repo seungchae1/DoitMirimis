@@ -45,14 +45,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.plus:
                     EditText newEdit = new EditText(MainActivity.this);
-                    FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 90);
+                    FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 250);
                     newEdit.setLayoutParams(params);
                     newEdit.setBackgroundResource(R.drawable.rectangle1);
                     newEdit.setGravity(Gravity.TOP);
-                    newEdit.setTextSize(15);
                     newEdit.setHint("오늘의 할 일은 무엇인가요?");
                     newEdit.setTextSize(15);
-                    newEdit.setPadding(0,10,0,0);
+                    newEdit.setPadding(80,87,100,100);
                     frame.addView(newEdit);
             }
         }
