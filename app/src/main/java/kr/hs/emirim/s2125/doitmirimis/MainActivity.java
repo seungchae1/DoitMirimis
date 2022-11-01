@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton btnPlus = findViewById(R.id.plus);
         btnPlus.setOnClickListener(btnListener);
     }
-    //
+
     View.OnClickListener btnListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     newEdit.setTextSize(15);
                     newEdit.setHint("오늘의 할 일은 무엇인가요?");
                     newEdit.setTextSize(15);
-                    newEdit.setPadding(80,100,80,80);
+                    newEdit.setPadding(0,10,0,0);
                     frame.addView(newEdit);
             }
         }
