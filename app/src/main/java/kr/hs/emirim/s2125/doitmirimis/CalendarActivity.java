@@ -3,11 +3,13 @@ package kr.hs.emirim.s2125.doitmirimis;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,6 +22,7 @@ public class CalendarActivity extends AppCompatActivity {
     public Button cha_Btn, del_Btn, save_Btn;
     public TextView diaryTextView, textView2, textView3;
     public EditText contextEditText;
+    private Object ImageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,15 +30,17 @@ public class CalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
         calendarView = findViewById(R.id.calendarView);
-        diaryTextView = findViewById(R.id.diaryTextView);
+        ImageButton chk_btn = findViewById(R.id.chk_Btn);
+        chk_btn.setOnClickListener(btnListener);
+/*        diaryTextView = findViewById(R.id.diaryTextView);
         save_Btn = findViewById(R.id.save_Btn);
         del_Btn = findViewById(R.id.del_Btn);
         cha_Btn = findViewById(R.id.cha_Btn);
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
-        contextEditText = findViewById(R.id.contextEditText);
+        contextEditText = findViewById(R.id.contextEditText);*/
 
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener()
+/*        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener()
         {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth)
@@ -50,8 +55,8 @@ public class CalendarActivity extends AppCompatActivity {
                 contextEditText.setText("");
                 checkDay(year, month, dayOfMonth);
             }
-        });
-        save_Btn.setOnClickListener(new View.OnClickListener()
+        });*/
+/*        save_Btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -64,16 +69,26 @@ public class CalendarActivity extends AppCompatActivity {
                 del_Btn.setVisibility(View.VISIBLE);
                 contextEditText.setVisibility(View.INVISIBLE);
                 textView2.setVisibility(View.VISIBLE);
-
             }
-        });
+        });*/
     }
+    View.OnClickListener btnListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = null;
+            switch (view.getId()){
+                case R.id.chk_Btn:
+                    intent = new Intent(CalendarActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
 
-    public void checkDay(int cYear, int cMonth, int cDay)
+    /*public void checkDay(int cYear, int cMonth, int cDay)
     {
         readDay = "" + cYear + "-" + (cMonth + 1) + "" + "-" + cDay + ".txt";
         FileInputStream fis;
-
         try
         {
             fis = openFileInput(readDay);
@@ -87,11 +102,9 @@ public class CalendarActivity extends AppCompatActivity {
             contextEditText.setVisibility(View.INVISIBLE);
             textView2.setVisibility(View.VISIBLE);
             textView2.setText(str);
-
             save_Btn.setVisibility(View.INVISIBLE);
             cha_Btn.setVisibility(View.VISIBLE);
             del_Btn.setVisibility(View.VISIBLE);
-
             cha_Btn.setOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -100,13 +113,11 @@ public class CalendarActivity extends AppCompatActivity {
                     contextEditText.setVisibility(View.VISIBLE);
                     textView2.setVisibility(View.INVISIBLE);
                     contextEditText.setText(str);
-
                     save_Btn.setVisibility(View.VISIBLE);
                     cha_Btn.setVisibility(View.INVISIBLE);
                     del_Btn.setVisibility(View.INVISIBLE);
                     textView2.setText(contextEditText.getText());
                 }
-
             });
             del_Btn.setOnClickListener(new View.OnClickListener()
             {
@@ -131,15 +142,14 @@ public class CalendarActivity extends AppCompatActivity {
                 del_Btn.setVisibility(View.INVISIBLE);
                 contextEditText.setVisibility(View.VISIBLE);
             }
-
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    @SuppressLint("WrongConstant")
+/*    @SuppressLint("WrongConstant")
     public void removeDiary(String readDay)
     {
         FileOutputStream fos;
@@ -172,6 +182,7 @@ public class CalendarActivity extends AppCompatActivity {
         {
             e.printStackTrace();
         }
-    }
+    }*/
 }
+
     
