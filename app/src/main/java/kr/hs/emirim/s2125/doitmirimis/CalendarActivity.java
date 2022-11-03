@@ -23,6 +23,7 @@ public class CalendarActivity extends AppCompatActivity {
     public TextView diaryTextView, textView2, textView3;
     public EditText contextEditText;
     private Object ImageButton;
+   // public String test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,15 +33,15 @@ public class CalendarActivity extends AppCompatActivity {
         calendarView = findViewById(R.id.calendarView);
         ImageButton chk_btn = findViewById(R.id.chk_Btn);
         chk_btn.setOnClickListener(btnListener);
-/*        diaryTextView = findViewById(R.id.diaryTextView);
+        diaryTextView = findViewById(R.id.diaryTextView);
         save_Btn = findViewById(R.id.save_Btn);
         del_Btn = findViewById(R.id.del_Btn);
         cha_Btn = findViewById(R.id.cha_Btn);
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
-        contextEditText = findViewById(R.id.contextEditText);*/
+        contextEditText = findViewById(R.id.contextEditText);
 
-/*        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener()
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener()
         {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth)
@@ -55,8 +56,8 @@ public class CalendarActivity extends AppCompatActivity {
                 contextEditText.setText("");
                 checkDay(year, month, dayOfMonth);
             }
-        });*/
-/*        save_Btn.setOnClickListener(new View.OnClickListener()
+        });
+        save_Btn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -70,7 +71,7 @@ public class CalendarActivity extends AppCompatActivity {
                 contextEditText.setVisibility(View.INVISIBLE);
                 textView2.setVisibility(View.VISIBLE);
             }
-        });*/
+        });
     }
     View.OnClickListener btnListener = new View.OnClickListener() {
         @Override
@@ -85,7 +86,7 @@ public class CalendarActivity extends AppCompatActivity {
         }
     };
 
-    /*public void checkDay(int cYear, int cMonth, int cDay)
+    public void checkDay(int cYear, int cMonth, int cDay)
     {
         readDay = "" + cYear + "-" + (cMonth + 1) + "" + "-" + cDay + ".txt";
         FileInputStream fis;
@@ -147,9 +148,9 @@ public class CalendarActivity extends AppCompatActivity {
         {
             e.printStackTrace();
         }
-    }*/
+    }
 
-/*    @SuppressLint("WrongConstant")
+    @SuppressLint("WrongConstant")
     public void removeDiary(String readDay)
     {
         FileOutputStream fos;
@@ -182,7 +183,7 @@ public class CalendarActivity extends AppCompatActivity {
         {
             e.printStackTrace();
         }
-    }*/
+    }
 }
 
     
