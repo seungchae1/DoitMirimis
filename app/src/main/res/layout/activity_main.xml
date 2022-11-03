@@ -44,14 +44,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <CheckBox
-                android:id="@+id/check1"
+            <FrameLayout
+                android:id="@+id/frame1"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:paddingLeft="10dp"
-                android:text="오늘의 할 일은 무엇인가요?"
-                android:textSize="15sp"
-                android:background="@drawable/rectangle1" />
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/text1"
+                    android:ems="10"
+                    android:gravity="top"
+                    android:hint="오늘의 할 일은 무엇인가요?"
+                    android:textSize="15sp"
+                    android:paddingTop="35dp"
+                    android:paddingLeft="50dp"
+                    android:background="@drawable/rectangle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp" />
+                <CheckBox
+                    android:id="@+id/check1"
+                    android:layout_width="20dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="20dp"
+                    android:paddingLeft="10dp"/>
+            </FrameLayout>
             <EditText
                 android:id="@+id/box1"
                 android:ems="10"

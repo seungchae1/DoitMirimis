@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoitMirimis">
         <activity
+            android:name=".checkbox_dlg"
+            android:exported="false" />
+        <activity
             android:name=".CalendarActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,24 +23,19 @@
         </activity>
         <activity
             android:name=".GetCharacterActivity2"
-            android:exported="false" >
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".GetCharacterActivity1"
-            android:exported="false" >
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".CharacterActivity"
-            android:exported="false" >
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".StartActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false" >
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>
