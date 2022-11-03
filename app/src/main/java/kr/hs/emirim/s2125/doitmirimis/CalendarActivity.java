@@ -23,6 +23,7 @@ public class CalendarActivity extends AppCompatActivity {
     public TextView diaryTextView, textView2, textView3;
     public EditText contextEditText;
     private Object ImageButton;
+   // public String test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
