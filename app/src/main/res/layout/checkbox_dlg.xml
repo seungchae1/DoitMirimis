@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="30dp">
     <TextView
         android:layout_width="match_parent"
@@ -10,6 +11,15 @@
         android:text="할 일을 입력하세요."/>
     <EditText
         android:id="@+id/ch_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메모 및 세부사항"/>
+    <EditText
+        android:id="@+id/ch_edit2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>
