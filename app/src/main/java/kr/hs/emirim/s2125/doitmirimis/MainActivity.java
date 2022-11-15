@@ -66,11 +66,12 @@ public class MainActivity extends AppCompatActivity {
                             AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                             View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
                             EditText editDlg = dlgView.findViewById(R.id.ch_edit);
+                            editDlg.setText(checkVText.getText());
                             dlg.setView(dlgView);
                             dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-
+                                    checkVText.setText(editDlg.getText());
                                 }
                             });
                             dlg.show();
@@ -78,36 +79,6 @@ public class MainActivity extends AppCompatActivity {
                     });
                     CheckBox check1 = checkView.findViewById(R.id.check1);
                     frame.addView(checkView);
-
-                    /*CheckBox newEdit = new CheckBox(MainActivity.this);
-                    TextView newText = new TextView(MainActivity.this);
-                    FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 250);
-                    newText.setLayoutParams(params);
-                    newEdit.setLayoutParams(params);
-                    newText.setBackgroundResource(R.drawable.rectangle1);
-                    newText.setHint("오늘의 할 일은 무엇인가요?");
-                    newText.setTextSize(15);
-                    newText.setPadding(100,80,0,0);
-                    newEdit.setPadding(10,0,0,0);
-
-                    newText.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
-                            View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
-                            EditText editDlg = dlgView.findViewById(R.id.ch_edit);
-                            dlg.setView(dlgView);
-                            dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-
-                                }
-                            });
-                            dlg.show();
-                        }
-                    });
-                    frame.addView(newText);
-                    frame.addView(newEdit);*/
                 case R.id.text1:
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                     View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);

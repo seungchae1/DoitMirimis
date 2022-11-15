@@ -17,11 +17,12 @@
             android:paddingLeft="60dp"
             android:background="@drawable/rectangle1"
             android:layout_width="match_parent"
-            android:layout_height="90dp" />
+            android:layout_height="90dp"/>
         <CheckBox
             android:id="@+id/check1"
-            android:layout_width="20dp"
+            android:layout_width="25dp"
             android:layout_height="90dp"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="10dp"
+            android:buttonTint="#34F1F8"/>
     </FrameLayout>
 </LinearLayout>
