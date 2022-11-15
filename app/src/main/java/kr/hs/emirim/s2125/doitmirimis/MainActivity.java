@@ -20,10 +20,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     LinearLayout frame;
     TextView text1;
     EditText edit1;
+    ArrayList<CheckBox> checkList = new ArrayList<CheckBox>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.plus:
                     View checkView = View.inflate(getApplicationContext(), R.layout.new_checkbox, null);
-                    TextView checkVText = checkView.findViewById(R.id.text1);
+                    TextView checkVText = checkView.findViewById(R.id.text_n);
                     checkVText.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -77,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
                             dlg.show();
                         }
                     });
-                    CheckBox check1 = checkView.findViewById(R.id.check1);
+                    CheckBox check1 = checkView.findViewById(R.id.check_n);
                     frame.addView(checkView);
+                    break;
                 case R.id.text1:
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                     View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);

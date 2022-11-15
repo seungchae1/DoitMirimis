@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <FrameLayout
-        android:id="@+id/frame1"
+        android:id="@+id/frame_n"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/text1"
+            android:id="@+id/text_n"
             android:ems="10"
             android:gravity="top"
             android:hint="오늘의 할 일은 무엇인가요?"
@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="90dp"/>
         <CheckBox
-            android:id="@+id/check1"
+            android:id="@+id/check_n"
             android:layout_width="25dp"
             android:layout_height="90dp"
             android:layout_marginLeft="10dp"
