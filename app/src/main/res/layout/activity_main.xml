@@ -55,7 +55,7 @@
                     android:hint="오늘의 할 일은 무엇인가요?"
                     android:textSize="15sp"
                     android:paddingTop="35dp"
-                    android:paddingLeft="50dp"
+                    android:paddingLeft="60dp"
                     android:background="@drawable/rectangle1"
                     android:layout_width="match_parent"
                     android:layout_height="90dp" />
