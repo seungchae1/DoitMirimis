@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
     EditText edit1;
     ArrayList<CheckBox> checkList = new ArrayList<CheckBox>();
     int cnt;
-
+    int i;
+    String edit_text2;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     @Override
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         text1.setText(sharedPreferences.getString("default",""));
 
         cnt=sharedPreferences.getInt("cnt",0);
-        for(int i=0; i<cnt; i++){
+        for(i=0; i<cnt; i++){
             View checkView = View.inflate(getApplicationContext(), R.layout.new_checkbox, null);
             TextView checkVText = checkView.findViewById(R.id.text_n);
             checkVText.setText(sharedPreferences.getString(Integer.toString(i),""));
@@ -87,12 +88,19 @@ public class MainActivity extends AppCompatActivity {
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                     View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
                     EditText editDlg = dlgView.findViewById(R.id.ch_edit);
+                    EditText editDlg2 = dlgView.findViewById(R.id.ch_edit2);
+                    editDlg2.setText(sharedPreferences.getString(edit_text2,""));
                     editDlg.setText(checkVText.getText());
                     dlg.setView(dlgView);
                     dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             checkVText.setText(editDlg.getText());
+                            editor.putString( Integer.toString(i),editDlg.getText().toString());
+                            edit_text2 = "edit";
+                            edit_text2.concat(Integer.toString(i));
+                            editor.putString( edit_text2,editDlg2.getText().toString());
+                            editor.commit();
                         }
                     });
                     dlg.show();
@@ -130,6 +138,8 @@ public class MainActivity extends AppCompatActivity {
                             AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                             View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
                             EditText editDlg = dlgView.findViewById(R.id.ch_edit);
+                            EditText editDlg2 = dlgView.findViewById(R.id.ch_edit2);
+                            editDlg2.setText(sharedPreferences.getString(edit_text2,""));
                             editDlg.setText(checkVText.getText());
                             dlg.setView(dlgView);
                             dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
@@ -137,6 +147,9 @@ public class MainActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     checkVText.setText(editDlg.getText());
                                     editor.putString( Integer.toString(cnt-1),editDlg.getText().toString());
+                                    edit_text2 = "edit";
+                                    edit_text2.concat(Integer.toString(cnt-1));
+                                    editor.putString( edit_text2,editDlg2.getText().toString());
                                     editor.commit();
                                 }
                             });
@@ -150,6 +163,8 @@ public class MainActivity extends AppCompatActivity {
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                     View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
                     EditText editDlg = dlgView.findViewById(R.id.ch_edit);
+                    EditText editDlg2 = dlgView.findViewById(R.id.ch_edit2);
+                    editDlg2.setText(sharedPreferences.getString("default2",""));
                     editDlg.setText(text1.getText());
                     dlg.setView(dlgView);
                     dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
@@ -157,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                         public void onClick(DialogInterface dialogInterface, int i) {
                             text1.setText(editDlg.getText());
                             editor.putString( "default",editDlg.getText().toString());
+                            editor.putString( "default2",editDlg2.getText().toString());
                             editor.commit();
                         }
                     });
