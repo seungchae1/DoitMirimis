@@ -32,7 +32,8 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class CalendarActivity extends AppCompatActivity{
+public class CalendarActivity extends AppCompatActivity
+{
     public String readDay = null;
     public String str = null;
     public CalendarView calendarView;
@@ -44,7 +45,7 @@ public class CalendarActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_calendar);
         calendarView = findViewById(R.id.calendarView);
         diaryTextView = findViewById(R.id.diaryTextView);
         save_Btn = findViewById(R.id.save_Btn);

@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<CheckBox> checkList = new ArrayList<CheckBox>();
     int cnt;
     int i;
-    String edit_text2;
+    String edit_text1, edit_text2;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     @Override
@@ -96,8 +96,10 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             checkVText.setText(editDlg.getText());
-                            editor.putString( Integer.toString(i),editDlg.getText().toString());
-                            edit_text2 = "edit";
+                            edit_text1 = "edit";
+                            edit_text1.concat(Integer.toString(i));
+                            editor.putString( edit_text1,editDlg.getText().toString());
+                            edit_text2 = "edit2";
                             edit_text2.concat(Integer.toString(i));
                             editor.putString( edit_text2,editDlg2.getText().toString());
                             editor.commit();
@@ -146,8 +148,10 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     checkVText.setText(editDlg.getText());
-                                    editor.putString( Integer.toString(cnt-1),editDlg.getText().toString());
-                                    edit_text2 = "edit";
+                                    edit_text1 = "edit";
+                                    edit_text1.concat(Integer.toString(cnt-1));
+                                    editor.putString( edit_text1,editDlg.getText().toString());
+                                    edit_text2 = "edit2";
                                     edit_text2.concat(Integer.toString(cnt-1));
                                     editor.putString( edit_text2,editDlg2.getText().toString());
                                     editor.commit();
