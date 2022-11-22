@@ -16,16 +16,18 @@
             android:exported="false" />
         <activity
             android:name=".CalendarActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".GetCharacterActivity2"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".GetCharacterActivity2"
-            android:exported="false"></activity>
         <activity
             android:name=".GetCharacterActivity1"
             android:exported="false"></activity>
@@ -40,7 +42,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="false">
-
 
         </activity>
     </application>
