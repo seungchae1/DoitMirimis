@@ -29,7 +29,9 @@ public class GetCharacterActivity2 extends AppCompatActivity {
 
         SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
         SharedPreferences.Editor editor= sharedPreferences.edit(); //sharedPreferences를 제어할 editor를 선언
-        editor.putBoolean(Integer.toString(giveChar),true);
+        String input_img = "img";
+        input_img.concat(Integer.toString(giveChar));
+        editor.putBoolean(input_img,true);
         editor.commit();
 
         ImageView imgv = findViewById(R.id.get_imgv);
