@@ -5,6 +5,7 @@ import static java.util.Calendar.YEAR;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +41,8 @@ public class CalendarActivity extends AppCompatActivity {
     public Button save_Btn;
     public TextView diaryTextView, textView2, textView3;
 
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +53,10 @@ public class CalendarActivity extends AppCompatActivity {
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
 
+
+        sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
+        editor = sharedPreferences.edit(); //sharedPreferences를 제어할 editor를 선언
+
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
@@ -57,9 +64,11 @@ public class CalendarActivity extends AppCompatActivity {
                 save_Btn.setVisibility(View.VISIBLE);
                 textView2.setVisibility(View.INVISIBLE);
                 diaryTextView.setText(String.format("%d / %d / %d", year, month + 1, dayOfMonth));
+                diaryTextView.setText(String.format("%d / %d / %d", year, month + 1, dayOfMonth));
+                editor.putString("today",String.format("%d년 %d월 %d일", year, month + 1, dayOfMonth));
+                editor.commit();
 
             }
-
         });
         save_Btn.setOnClickListener(new View.OnClickListener()
         {
