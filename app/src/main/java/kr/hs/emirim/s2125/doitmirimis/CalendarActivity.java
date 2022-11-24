@@ -37,6 +37,7 @@ public class CalendarActivity extends AppCompatActivity {
     public String readDay = null;
     public String str = null;
     public CalendarView calendarView;
+    public Button save_Btn;
     public TextView diaryTextView, textView2, textView3;
 
     @Override
@@ -45,6 +46,7 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calendar);
         calendarView = findViewById(R.id.calendarView);
         diaryTextView = findViewById(R.id.diaryTextView);
+        save_Btn = findViewById(R.id.save_Btn);
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
 
@@ -52,8 +54,23 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 diaryTextView.setVisibility(View.VISIBLE);
+                save_Btn.setVisibility(View.VISIBLE);
                 textView2.setVisibility(View.INVISIBLE);
                 diaryTextView.setText(String.format("%d / %d / %d", year, month + 1, dayOfMonth));
+
+
+            }
+
+
+        });
+        save_Btn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                textView2.setText(str);
+                save_Btn.setVisibility(View.INVISIBLE);
+                textView2.setVisibility(View.VISIBLE);
 
             }
         });
