@@ -43,7 +43,7 @@ public class CharacterActivity extends AppCompatActivity {
         for(int i=0; i<21; i++)
         {
             String input_img = "img";
-            input_img.concat(Integer.toString(i));
+            input_img=input_img.concat(Integer.toString(i));
             get_Char[i]=sharedPreferences.getBoolean(input_img, false);
         }
     }
