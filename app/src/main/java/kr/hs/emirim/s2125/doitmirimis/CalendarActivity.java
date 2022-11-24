@@ -58,9 +58,7 @@ public class CalendarActivity extends AppCompatActivity {
                 textView2.setVisibility(View.INVISIBLE);
                 diaryTextView.setText(String.format("%d / %d / %d", year, month + 1, dayOfMonth));
 
-
             }
-
 
         });
         save_Btn.setOnClickListener(new View.OnClickListener()
@@ -68,12 +66,15 @@ public class CalendarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
+                Intent intent = null;
                 textView2.setText(str);
                 save_Btn.setVisibility(View.INVISIBLE);
                 textView2.setVisibility(View.VISIBLE);
-
+                intent = new Intent(CalendarActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
+
 
     }
 }
