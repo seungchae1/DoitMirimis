@@ -47,19 +47,21 @@ import java.util.Map;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
-    static RequestQueue requestQueue;
     LinearLayout frame;
     TextView text1;
     EditText edit1;
     ArrayList<CheckBox> checkList = new ArrayList<CheckBox>();
     int cnt;
+    int new_cnt;
     int i;
     String edit_text1, edit_text2;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    String today;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         // 타이틀바 없애는 거임!! 지우지 마셈!!
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
@@ -67,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
         editor = sharedPreferences.edit(); //sharedPreferences를 제어할 editor를 선언
 
-        setContentView(R.layout.activity_main);
+        today = sharedPreferences.getString("today","");
+        //Toast.makeText(getApplicationContext(), today, Toast.LENGTH_SHORT).show();
+        TextView today_text = findViewById(R.id.today_text);
+        today_text.setText(today);
         frame = findViewById(R.id.frame);
         ImageButton btnCharacter = findViewById(R.id.btn_char);
         ImageButton btnCalendar = findViewById(R.id.btn_calendar);
@@ -81,13 +86,16 @@ public class MainActivity extends AppCompatActivity {
         text1.setOnClickListener(btnListener);
         text1.setText(sharedPreferences.getString("default",""));
 
-        cnt=sharedPreferences.getInt("cnt",0);
-        for(i=0; i<cnt; i++){
+        cnt=sharedPreferences.getInt(today.concat("cnt"),0);
+        new_cnt=0;
+        for(i=1; i<=cnt; i++){
             View checkView = View.inflate(getApplicationContext(), R.layout.new_checkbox, null);
             TextView checkVText = checkView.findViewById(R.id.text_n);
+            checkVText.setText(sharedPreferences.getString(today.concat("edit1")+i,""));
             checkVText.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    new_cnt++;
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                     View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
                     EditText editDlg = dlgView.findViewById(R.id.ch_edit);
@@ -96,8 +104,11 @@ public class MainActivity extends AppCompatActivity {
                     dlg.setView(dlgView);
                     dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
+                        public void onClick(DialogInterface dialogInterface, int a) {
                             checkVText.setText(editDlg.getText());
+                            editor.putString(today.concat("edit1")+new_cnt,editDlg.getText().toString());
+                            //Toast.makeText(getApplicationContext(), Integer.toString(i), Toast.LENGTH_SHORT).show();
+                            editor.commit();
                         }
                     });
                     dlg.show();
@@ -125,10 +136,11 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.plus:
                     cnt++;
-                    editor.putInt("cnt",cnt);
+                    editor.putInt(today.concat("cnt"),cnt);
                     editor.commit();
                     View checkView = View.inflate(getApplicationContext(), R.layout.new_checkbox, null);
                     TextView checkVText = checkView.findViewById(R.id.text_n);
+                    checkVText.setText(sharedPreferences.getString(today.concat("edit1")+cnt,""));
                     checkVText.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -136,13 +148,14 @@ public class MainActivity extends AppCompatActivity {
                             View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
                             EditText editDlg = dlgView.findViewById(R.id.ch_edit);
                             EditText editDlg2 = dlgView.findViewById(R.id.ch_edit2);
-                            editDlg2.setText(sharedPreferences.getString(edit_text2,""));
+                            //editDlg2.setText(sharedPreferences.getString(edit_text2,""));
                             editDlg.setText(checkVText.getText());
                             dlg.setView(dlgView);
                             dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     checkVText.setText(editDlg.getText());
+                                    editor.putString(today.concat("edit1")+cnt,editDlg.getText().toString());
                                     editor.commit();
                                 }
                             });
