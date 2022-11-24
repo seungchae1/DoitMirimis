@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.icu.util.MeasureUnit;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -41,7 +42,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     static RequestQueue requestQueue;
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<CheckBox> checkList = new ArrayList<CheckBox>();
     int cnt;
     int i;
-    String edit_text2;
+    String edit_text1, edit_text2;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     @Override
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         // 타이틀바 없애는 거임!! 지우지 마셈!!
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
         sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
         editor = sharedPreferences.edit(); //sharedPreferences를 제어할 editor를 선언
 
@@ -81,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
         for(i=0; i<cnt; i++){
             View checkView = View.inflate(getApplicationContext(), R.layout.new_checkbox, null);
             TextView checkVText = checkView.findViewById(R.id.text_n);
-            checkVText.setText(sharedPreferences.getString(Integer.toString(i),""));
             checkVText.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -89,18 +92,12 @@ public class MainActivity extends AppCompatActivity {
                     View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
                     EditText editDlg = dlgView.findViewById(R.id.ch_edit);
                     EditText editDlg2 = dlgView.findViewById(R.id.ch_edit2);
-                    editDlg2.setText(sharedPreferences.getString(edit_text2,""));
                     editDlg.setText(checkVText.getText());
                     dlg.setView(dlgView);
                     dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             checkVText.setText(editDlg.getText());
-                            editor.putString( Integer.toString(i),editDlg.getText().toString());
-                            edit_text2 = "edit";
-                            edit_text2.concat(Integer.toString(i));
-                            editor.putString( edit_text2,editDlg2.getText().toString());
-                            editor.commit();
                         }
                     });
                     dlg.show();
@@ -146,10 +143,6 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     checkVText.setText(editDlg.getText());
-                                    editor.putString( Integer.toString(cnt-1),editDlg.getText().toString());
-                                    edit_text2 = "edit";
-                                    edit_text2.concat(Integer.toString(cnt-1));
-                                    editor.putString( edit_text2,editDlg2.getText().toString());
                                     editor.commit();
                                 }
                             });

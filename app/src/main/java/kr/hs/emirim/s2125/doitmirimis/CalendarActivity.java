@@ -4,6 +4,7 @@ import static java.util.Calendar.YEAR;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,6 +77,9 @@ public class CalendarActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
+                Intent intent = new Intent(CalendarActivity.this, MainActivity.class);
+                startActivity(intent);
+                /*
                 saveDiary(readDay);
                 str = contextEditText.getText().toString();
                 textView2.setText(str);
@@ -83,7 +87,8 @@ public class CalendarActivity extends AppCompatActivity
                 cha_Btn.setVisibility(View.VISIBLE);
                 del_Btn.setVisibility(View.VISIBLE);
                 contextEditText.setVisibility(View.INVISIBLE);
-                textView2.setVisibility(View.VISIBLE);
+                textView2.setVisibility(View.VISIBLE);*/
+
 
             }
         });

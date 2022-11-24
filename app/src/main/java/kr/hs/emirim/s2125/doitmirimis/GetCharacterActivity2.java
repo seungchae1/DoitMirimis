@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GetCharacterActivity2 extends AppCompatActivity {
     public static int giveChar;
@@ -27,15 +28,18 @@ public class GetCharacterActivity2 extends AppCompatActivity {
 
         giveChar = (int)(Math.random()*21)+1;
 
-        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
-        SharedPreferences.Editor editor= sharedPreferences.edit(); //sharedPreferences를 제어할 editor를 선언
-        editor.putBoolean(Integer.toString(giveChar),true);
-        editor.commit();
-
         ImageView imgv = findViewById(R.id.get_imgv);
         imgv.setImageResource(imgId[giveChar]);
         TextView textv = findViewById(R.id.get_textv);
         textv.setText(CharacterActivity.imgName[giveChar]);
+
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
+        SharedPreferences.Editor editor= sharedPreferences.edit(); //sharedPreferences를 제어할 editor를 선언
+        String input_img = "img";
+        input_img=input_img.concat(Integer.toString(giveChar));
+        editor.putBoolean(input_img,true);
+        editor.commit();
+
     }
 
     View.OnClickListener btnListener = new View.OnClickListener() {
