@@ -52,6 +52,7 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity {
     LinearLayout frame;
     TextView text1;
+    CheckBox check;
     EditText edit1;
     ArrayList<CheckBox> checkList = new ArrayList<CheckBox>();
     int cnt;
@@ -87,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
         btnCalendar.setOnClickListener(btnListener);
         ImageButton btnPlus = findViewById(R.id.plus);
         btnPlus.setOnClickListener(btnListener);
-        CheckBox check1 = findViewById(R.id.check1);
-        check1.setOnClickListener(btnListener);
+        check = findViewById(R.id.check1);
+        check.setOnClickListener(btnListener);
         text1= findViewById(R.id.text1);
         text1.setOnClickListener(btnListener);
-        text1.setText(sharedPreferences.getString("default",""));
+        text1.setText(sharedPreferences.getString(today.concat("default"),""));
 
         cnt=sharedPreferences.getInt(today.concat("cnt"),0);
         new_cnt=0;
@@ -186,25 +187,30 @@ public class MainActivity extends AppCompatActivity {
                     });
                     CheckBox check1 = checkView.findViewById(R.id.check_n);
                     frame.addView(checkView);
+                    editor.putBoolean(today.concat("isCheck")+cnt,check1.isChecked());
                     break;
                 case R.id.text1:
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
                     View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
                     EditText editDlg = dlgView.findViewById(R.id.ch_edit);
                     EditText editDlg2 = dlgView.findViewById(R.id.ch_edit2);
-                    editDlg2.setText(sharedPreferences.getString("default2",""));
+                    editDlg2.setText(sharedPreferences.getString(today.concat("default2"),""));
                     editDlg.setText(text1.getText());
                     dlg.setView(dlgView);
                     dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             text1.setText(editDlg.getText());
-                            editor.putString( "default",editDlg.getText().toString());
-                            editor.putString( "default2",editDlg2.getText().toString());
+                            editor.putString( today.concat("default"),editDlg.getText().toString());
+                            editor.putString( today.concat("default2"),editDlg2.getText().toString());
                             editor.commit();
                         }
                     });
                     dlg.show();
+                    break;
+                case R.id.check1:
+                    editor.putBoolean(today.concat("isCheck")+cnt,check.isChecked());
+                    break;
             }
         }
     };
