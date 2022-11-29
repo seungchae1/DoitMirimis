@@ -4,12 +4,15 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.*;
+
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.icu.util.MeasureUnit;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     int cnt;
     int new_cnt;
     int i;
+    ArrayList<Boolean> Check_all = new ArrayList<Boolean>();
     String edit_text1, edit_text2;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -101,12 +105,14 @@ public class MainActivity extends AppCompatActivity {
                     EditText editDlg = dlgView.findViewById(R.id.ch_edit);
                     EditText editDlg2 = dlgView.findViewById(R.id.ch_edit2);
                     editDlg.setText(checkVText.getText());
+                    editDlg2.setText(sharedPreferences.getString(today.concat("edit2")+new_cnt,""));
                     dlg.setView(dlgView);
                     dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int a) {
                             checkVText.setText(editDlg.getText());
                             editor.putString(today.concat("edit1")+new_cnt,editDlg.getText().toString());
+                            editor.putString(today.concat("edit2")+new_cnt,editDlg2.getText().toString());
                             //Toast.makeText(getApplicationContext(), Integer.toString(i), Toast.LENGTH_SHORT).show();
                             editor.commit();
                         }
@@ -148,14 +154,15 @@ public class MainActivity extends AppCompatActivity {
                             View dlgView = View.inflate(MainActivity.this, R.layout.checkbox_dlg,null);
                             EditText editDlg = dlgView.findViewById(R.id.ch_edit);
                             EditText editDlg2 = dlgView.findViewById(R.id.ch_edit2);
-                            //editDlg2.setText(sharedPreferences.getString(edit_text2,""));
                             editDlg.setText(checkVText.getText());
+                            editDlg2.setText(sharedPreferences.getString(today.concat("edit2")+cnt,""));
                             dlg.setView(dlgView);
                             dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     checkVText.setText(editDlg.getText());
                                     editor.putString(today.concat("edit1")+cnt,editDlg.getText().toString());
+                                    editor.putString(today.concat("edit2")+cnt,editDlg2.getText().toString());
                                     editor.commit();
                                 }
                             });
