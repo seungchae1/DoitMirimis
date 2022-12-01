@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     String today;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -148,6 +151,18 @@ public class MainActivity extends AppCompatActivity {
                     editor.putInt(today.concat("cnt"),cnt);
                     editor.commit();
                     View checkView = View.inflate(getApplicationContext(), R.layout.new_checkbox, null);
+                    CheckBox checkBox = checkView.findViewById(R.id.check_n); // arrayList에 체크박스 저장됨
+                    checkList.add(checkBox);
+
+//                    for (int i=0; i<checkList.size();i++){
+//                        if(checkBox.isChecked()){
+////                            체크됨
+//                        }else{
+////                            체크안됨
+//                        }
+//
+//
+//                    }
                     TextView checkVText = checkView.findViewById(R.id.text_n);
                     checkVText.setText(sharedPreferences.getString(today.concat("edit1")+cnt,""));
                     checkVText.setOnClickListener(new View.OnClickListener() {
