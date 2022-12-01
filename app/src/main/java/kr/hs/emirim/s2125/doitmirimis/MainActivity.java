@@ -158,8 +158,6 @@ public class MainActivity extends AppCompatActivity {
 //                        }else{
 ////                            체크안됨
 //                        }
-//
-//
 //                    }
                     TextView checkVText = checkView.findViewById(R.id.text_n);
                     checkVText.setText(sharedPreferences.getString(today.concat("edit1")+cnt,""));
