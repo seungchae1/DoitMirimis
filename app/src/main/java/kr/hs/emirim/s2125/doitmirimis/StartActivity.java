@@ -1,5 +1,6 @@
 package kr.hs.emirim.s2125.doitmirimis;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,9 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        // 타이틀바 없애는 거임!! 지우지 마셈!!
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         ImageButton btnCalendar = findViewById(R.id.btn_calendar);
         ImageButton btnCharacter = findViewById(R.id.btn_character);
         btnCalendar.setOnClickListener(btnListener);
