@@ -80,7 +80,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/image3"/>
-
+        <ImageButton
+            android:id="@+id/okay"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/finish"/>
         <ImageButton
             android:id="@+id/plus"
             android:layout_width="52dp"

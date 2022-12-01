@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
         frame = findViewById(R.id.frame);
         ImageButton btnCharacter = findViewById(R.id.btn_char);
         ImageButton btnCalendar = findViewById(R.id.btn_calendar);
+        ImageButton btn_finish = findViewById(R.id.okay);
+        btn_finish.setOnClickListener(btnListener);
         btnCharacter.setOnClickListener(btnListener);
         btnCalendar.setOnClickListener(btnListener);
         ImageButton btnPlus = findViewById(R.id.plus);
@@ -185,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
                     });
                     CheckBox check1 = checkView.findViewById(R.id.check_n);
                     frame.addView(checkView);
-                    editor.putBoolean(today.concat("isCheck")+cnt,check1.isChecked());
                     break;
                 case R.id.text1:
                     AlertDialog.Builder dlg = new AlertDialog.Builder(MainActivity.this);
@@ -207,7 +208,11 @@ public class MainActivity extends AppCompatActivity {
                     dlg.show();
                     break;
                 case R.id.check1:
-                    editor.putBoolean(today.concat("isCheck")+cnt,check.isChecked());
+                    //editor.putBoolean(today.concat("isCheck")+cnt,check.isChecked());
+                    break;
+                case R.id.okay:
+                    intent = new Intent(MainActivity.this, GetCharacterActivity1.class);
+                    startActivity(intent);
                     break;
             }
         }
